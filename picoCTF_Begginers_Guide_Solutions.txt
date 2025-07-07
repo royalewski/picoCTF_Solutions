@@ -50,7 +50,7 @@ Section 4:
     1. Python Wrangling:
 			Download python script, key in .txt file and encrypted flag in another .txt file. 
 			You can run the scrypt with -h to get information on using it. Use the provided key to decrypt the flag.
-   2. PW Crack 2:
+   	2. PW Crack 2:
 			The same as before, but now password is in ASCII format, you can either check it in ASCII table, 
 			or copy that password and print it in bash using python3 -c "<KEY>"
     3. PW Crack 3:
