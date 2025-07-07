@@ -1,0 +1,75 @@
+Solutions to The Beginner's Guide to the picoGym
+
+Section 1:
+    1. Obedient Cat:
+			lag is in plain sight in downloaded file
+    2. Super SSH
+			ssh used in Webshell terminal
+			ssh ctf-player@titan.picoctf.net -p 62566
+			Link to SSH doc: https://linux.die.net/man/1/ssh
+    3. what's a net cat?
+			Net Cat used in Webshell terminal
+			nc jupiter.challenges.picoctf.org 64287
+			Link to NC doc:  https://linux.die.net/man/1/nc
+Section 2 (Cyber Chef):
+    1. Mod 26:
+			Simple Ceasars cipher, rotating letters by 13 (mod 26) solves it. 
+			Decrypter: rot13
+    2. Warmed Up:
+			Converting 0x3D to decimal, either by hand or using rapidtables.com
+			0x3D = 0b 0011 1101 = 61
+    3. 2Warm:
+			Again simple conversion.
+			42 = 0b101010
+    4. Bases
+			A bit trickier conversion, in Base-64, encoder at rapidtables.com
+Section 3:
+    1. Wave a flag:
+			I think this task is bugged. It states that you should
+			download provided file. Change its mode with chmod +x file
+			and execute it via ./file. It provides the flag, but its 
+			wrong. You should download the warm file in webshell using 
+			command provided in Hint, change its mode, and the execute
+			with ./warm -h.        
+    2. Tab, Tab, Attack:
+			Download it, unzip and then either LMB click it through or use 
+			ls, cd and tabcomplete in terminal to navigate. Open last file.
+    3. Insp3ct0r:
+			Enter provided link, flag is divided into 3 parts. You need to inspect the page using F12 or through RBM. 
+			1st one is in Inspector in HTML file. 2nd one Style editor in mycss.css file. Last is in debugger in myjs.js.
+    4. strings it:
+			Download provided file. use strings on it to display all strings the file contains. (strings strings). 
+			It contains a lot, you can search for specific sequence using | grep. 
+			We search for flag starting with picoCTF so -> strings strings | grep picoCTF
+    5. First Grep:
+			The same as in strings it.
+    6. Where are the robots:
+			Enter provided webpage, and at the end of the link add /robots.txt. 
+			It will give you a disallowed source that you should enter the same way as /robots.txt
+Section 4:
+    1. Python Wrangling:
+			Download python script, key in .txt file and encrypted flag in another .txt file. 
+			You can run the scrypt with -h to get information on using it. Use the provided key to decrypt the flag.
+   2. PW Crack 2:
+			The same as before, but now password is in ASCII format, you can either check it in ASCII table, 
+			or copy that password and print it in bash using python3 -c "<KEY>"
+    3. PW Crack 3:
+			The password now is hashed. List of possible password is in python code. You can manually every of them, or modify python file
+			and create a for loop checking each password every iteration
+	4. PW Crack 4:
+			The same as previous one, but now you have 100 possible passwords, manually checking would be tedious.
+	5. PW Crack 5: 
+			The same as previous one, but now passwords need to be read from separate .txt file
+Section 5:
+	1. Enhance!:
+			Flag is hidden in photos metadata. Can open it using strings.
+	2. Big Zip:
+			Catalogue containing subcatalogues and many files. You can quickly search through them
+			in search for specific file name with grep -r "picoCTF"
+	3. keygenme.py:
+			Program expects you to input correct password. The flag contains two
+			static keys (in plain sight inside the code) and dynamic key. That dynamic key itself is few indexes
+			of encrypted username so what I did was printf that encrypted symbols, copied it an input as a password.
+	3. buffer overflow 0:
+			You need the buffer to overflow. You can achieve it buy inputting more chars then the program expects. 
+			To get your flag you need to connect via nc nc saturn.picoctf.net xxxxx.
